@@ -1,0 +1,5 @@
+$(document).ready(function(){"use strict";$('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');$('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');$(".menu > ul").before("<a href=\"#\" class=\"menu-mobile\">Navigation</a>");$(document).on('click',function(e){if($(e.target).parents('.menu').length===0)
+$(".menu > ul").removeClass('show-on-mobile');});$(".menu > ul > li").click(function(){var thisMenu=$(this).children("ul");var prevState=thisMenu.css('display');$(".menu > ul > li > ul").fadeOut();if($(window).width()<943){if(prevState!=='block')
+thisMenu.fadeIn(150);}
+if($(window).width()>943){$(this).children("ul").show();e.preventDefault();}
+if($(window).width()>943){$(this).children("ul").hide();e.preventDefault();}});$(".menu-mobile").click(function(e){$(".menu > ul").toggleClass('show-on-mobile');e.preventDefault();});});

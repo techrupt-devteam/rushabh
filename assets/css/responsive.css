@@ -1,0 +1,647 @@
+@media only screen and (max-width:1600px) {
+.bike-color .col-9 img {
+width:100%
+}
+
+.color-section .nav-pills .nav-link abbr {
+width:270px
+}
+
+.about-product img,.all-Features .body-dimension img,.bike-color .col-9 img,.bike-color .tab-pane img,.body-dimension img,.contact-form img,.site-specification img {
+width:auto
+}
+
+.contact-form .mu-team-area .mu-single-team-img img {
+width:auto
+}
+}
+
+@media only screen and (max-width:1440px) {
+.about-product img,.all-Features .body-dimension img,.bike-color .col-9 img,.bike-color .tab-pane img,.body-dimension img,.contact-form img,.site-specification img {
+width:100%
+}
+
+.contact-form .mu-team-area .mu-single-team-img img {
+width:auto
+}
+}
+
+@media only screen and (max-width:1366px) {
+.about-product img,.all-Features .body-dimension img,.bike-color .col-9 img,.bike-color .tab-pane img,.body-dimension img,.contact-form img,.site-specification img {
+width:100%
+}
+
+.contact-form .mu-team-area .mu-single-team-img img {
+width:auto
+}
+}
+
+@media only screen and (max-width:1280px) {
+.about-product img,.all-Features .body-dimension img,.bike-color .col-9 img,.bike-color .tab-pane img,.body-dimension img,.contact-form img,.site-specification img {
+width:100%
+}
+
+.contact-form .mu-team-area .mu-single-team-img img {
+width:auto
+}
+}
+@media only screen and (min-width:767px) and (max-width:1024px) {
+.menu > ul > li a {
+    padding: 1em 1em !important;
+    font-size: 12px !important;
+}
+.logo .ls-is-cached.lazyloaded {
+    max-width: 50px !important;
+}
+}
+
+@media only screen and (min-width:960px) and (max-width:1200px) {
+.menu-container {
+padding:0 3rem
+}
+
+.new-launch .new-launch-description h3 {
+font-size:30px
+}
+
+.new-launch .new-launch-description h3:after {
+height:3px
+}
+
+.new-arrivals .new-arrivals-description {
+margin-top:8%
+}
+
+.about-product,.bike-color,.download-product,.site-specification {
+padding:40px
+}
+
+.body-dimension img,.contact-form img {
+width:100%
+}
+
+.benefits-honda ul li,.features-honda ul li {
+width:100%
+}
+
+.about-product img,.all-Features .body-dimension img,.bike-color .col-9 img,.bike-color .tab-pane img,.site-specification img {
+width:100%
+}
+.menu > ul > li a{
+	padding: 1em 1.1em;
+	font-size: 13px;
+}
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.menu-container {
+display:block;
+padding:0 1rem
+}
+.menu > ul > li a{
+	padding: 1em 1.1em;
+	font-size: 12px;
+}
+.logo,.menu {
+width:100%
+}
+
+.logo {
+text-align:center
+}
+
+.menu {
+display:block
+}
+
+.menu a {
+color:#fff
+}
+
+.menu>ul>li a {
+padding:1.5em 1.5em 1.5em 0
+}
+
+.menu>ul {
+margin:0
+}
+
+.menu>ul>li>ul>li a img {
+display:none
+}
+
+.menu>ul>li>ul>li {
+border-bottom:1px solid #333;
+padding-bottom:18px
+}
+
+.menu>ul>li>ul>li>a {
+font-weight:700
+}
+
+.side-nav ul {
+float:none;
+text-align:center
+}
+
+.side-nav {
+justify-content:center;
+-webkit-box-pack:center
+}
+
+.side-nav ul li {
+padding:5px 20px
+}
+
+.top-section-menu ul {
+margin-left:0
+}
+
+.top-section-menu ul li {
+padding:5px 18px
+}
+
+.top-section-menu {
+text-align:center
+}
+
+.new-arrivals h3,.new-launch .new-launch-description h3 {
+font-size:20px;
+line-height:40px
+}
+
+.new-launch .new-launch-description h3:after {
+width:40px;
+height:4px
+}
+
+.new-arrivals .new-arrivals-description {
+margin:10% 0
+}
+
+.videos-latest-update h3 {
+padding-left:0;
+font-size:30px;
+line-height:60px;
+margin:30px 0
+}
+
+.videos-latest-update .latest-updates {
+padding-left:0
+}
+
+.videos-latest-update .latest-updates ul {
+margin:25px 0
+}
+
+.videos-latest-update .latest-updates ul li {
+padding:0 0 10px 65px
+}
+
+.videos-latest-update {
+margin:60px 0 20px
+}
+
+footer .social-icons li {
+padding:0 10px
+}
+
+.new-arrivals a {
+padding:20px 25px
+}
+
+.about-product,.bike-color,.download-product,.site-specification {
+padding:10px 40px
+}
+
+.color-section {
+width:100%
+}
+
+.bike-color .col-9 {
+max-width:100%;
+flex:0 0 100%
+}
+
+.color-section .nav-pills .nav-link abbr {
+position:static;
+width:100%
+}
+
+.innerpage h2 {
+font-size:30px
+}
+
+.color-section .nav {
+float:none;
+padding:0 20px
+}
+
+.body-dimension img,.contact-form img {
+width:100%
+}
+
+.annual-features ul li,.benefits-honda ul li,.features-honda ul li {
+width:100%
+}
+
+.about-product img,.all-Features .body-dimension img,.bike-color .tab-pane img,.site-specification img {
+width:100%
+}
+}
+
+@media(max-width:767px) {
+.menu-dropdown-icon::before {
+padding:.2em .5em
+}
+}
+
+@media only screen and (min-width:480px) and (max-width:767px) {
+.menu-container {
+display:block;
+padding:0 1rem
+}
+
+.logo,.menu {
+width:100%
+}
+
+.latest-updates.holder::before {
+margin:0
+}
+
+.logo {
+text-align:center
+}
+
+.menu {
+display:block
+}
+
+.menu a {
+color:#fff
+}
+
+.menu>ul>li a {
+padding:1.5em 1.5em 1.5em 0
+}
+
+.menu>ul {
+margin:0
+}
+
+.menu>ul>li>ul>li a img {
+display:none
+}
+
+.menu>ul>li>ul>li {
+border-bottom:1px solid #333;
+padding-bottom:18px
+}
+
+.menu>ul>li>ul>li>a {
+font-weight:700
+}
+
+.side-nav ul {
+float:none;
+text-align:center
+}
+
+.side-nav {
+justify-content:center;
+-webkit-box-pack:center
+}
+
+.side-nav ul li {
+padding:5px 20px
+}
+
+.top-section-menu ul {
+margin-left:0
+}
+
+.top-section-menu ul li {
+padding:5px 18px
+}
+
+.top-section-menu {
+text-align:center
+}
+
+.new-arrivals h3,.new-launch .new-launch-description h3 {
+font-size:30px;
+line-height:40px
+}
+
+.new-launch .new-launch-description h3:after {
+width:40px;
+height:4px
+}
+
+.new-arrivals .new-arrivals-description {
+margin:10% 0
+}
+
+.videos-latest-update h3 {
+padding-left:0;
+font-size:30px;
+line-height:60px;
+margin:30px 0
+}
+
+.videos-latest-update .latest-updates {
+padding-left:0
+}
+
+.videos-latest-update .latest-updates ul {
+margin:25px 0
+}
+
+.videos-latest-update .latest-updates ul li {
+padding:0 0 10px 65px
+}
+
+.videos-latest-update {
+margin:60px 0 20px
+}
+
+.about-product,.bike-color,.download-product,.site-specification {
+padding:10px
+}
+
+.download-product ul li {
+width:100%;
+margin-bottom:10px
+}
+
+.color-section {
+width:100%
+}
+
+.bike-color .col-9 {
+max-width:100%;
+flex:0 0 100%
+}
+
+.color-section .nav-pills .nav-link abbr {
+position:static;
+width:100%
+}
+
+.innerpage h2 {
+font-size:30px
+}
+
+.color-section .nav {
+float:none;
+width:100%;
+padding:0 20px
+}
+
+.about-product img,.bike-color .tab-pane img,.site-specification img {
+width:100%
+}
+}
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+.newsletter_form input[type=email] {
+width:auto;
+float: left;
+}
+.newsletter_form form{
+	width: 100%;
+}
+.newsletter_form button {
+font-size:14px;
+padding:0 10px;
+font-weight:500
+}
+footer .copyright-section a, footer .copyright-section p{
+	width: 100%;
+}
+
+.mt-60 {
+margin-top:30px
+}
+
+.menu>ul>li {
+float:inline-start
+}
+
+.menu-container {
+display:block;
+padding:0 .5rem
+}
+
+.logo,.menu {
+width:100%
+}
+
+.logo {
+text-align:left;
+padding-top:3px
+}
+
+.logo img {
+max-width:50px
+}
+
+.menu {
+display:block
+}
+
+.menu a {
+color:#333;
+padding-top:5px
+}
+
+.menu>ul>li a {
+font-size:12px;
+padding:6px
+}
+
+.menu>ul {
+margin:0
+}
+
+.menu>ul>li>ul>li a img {
+display:none
+}
+
+.menu>ul>li>ul>li {
+border-bottom:1px solid #333;
+padding-bottom:5px
+}
+
+.menu>ul>li>ul>li>a {
+font-weight:700
+}
+
+.menu>ul>li>ul>li>a>span {
+padding:0
+}
+
+.menu>ul>li>ul>li>ul {
+margin:20px 0 0
+}
+
+.side-nav ul {
+float:none;
+text-align:center
+}
+
+.side-nav {
+justify-content:center;
+-webkit-box-pack:center
+}
+
+.side-nav ul li {
+padding:5px 20px
+}
+
+.top-section-menu ul {
+margin-left:0
+}
+
+.top-section-menu ul li {
+	padding:5px 6px
+}
+ol.bjqs-markers{
+	bottom: -4px;
+}
+button.floatton-btn{
+	bottom: 12% !important;
+}
+.top-section-menu {
+text-align:center
+}
+
+.new-arrivals h3,.new-launch .new-launch-description h3 {
+font-size:30px;
+line-height:40px
+}
+
+.new-launch .new-launch-description h3:after {
+width:40px;
+height:4px
+}
+
+.new-arrivals .new-arrivals-description {
+margin:10% 0
+}
+
+.videos-latest-update h3 {
+padding-left:0;
+font-size:30px;
+line-height:60px;
+margin:30px 0
+}
+
+.videos-latest-update .latest-updates {
+padding-left:0
+}
+
+.videos-latest-update .latest-updates ul {
+margin:25px 0
+}
+
+.videos-latest-update .latest-updates ul li {
+padding:0 0 10px 65px
+}
+
+.videos-latest-update {
+margin:0 0 20px
+}
+
+.about-product,.bike-color,.download-product,.site-specification {
+padding:10px
+}
+
+.download-product ul li {
+width:50%;
+margin-bottom:10px
+}
+
+.bike-color .tab-pane img {
+width:100%
+}
+
+.color-section {
+width:100%
+}
+
+.bike-color .col-9 {
+max-width:100%;
+flex:0 0 100%
+}
+
+.color-section .nav-pills .nav-link abbr {
+position:static;
+width:100%
+}
+
+.innerpage h2 {
+font-size:30px
+}
+
+.color-section .nav {
+float:none;
+width:100%;
+padding:0 20px
+}
+
+.new-launch h2 {
+font-size:30px
+}
+
+.online-booking .online-service h3 {
+font-size:18px
+}
+
+.specification-tabs li {
+width:50%
+}
+
+.annual-features ul li,.benefits-honda ul li,.features-honda ul li {
+width:100%;
+min-height:70px
+}
+
+.mb-sect,.mb-social {
+text-align:center
+}
+
+.new-launch .new-launch-description {
+margin-bottom:0
+}
+
+.download-product ul li h4 {
+font-size:16px
+}
+
+.download-product ul li a img {
+width:70px
+}
+
+.color-section #v-pills-tab a span {
+display:table;
+margin:0 auto
+}
+
+.color-section .nav-pills .nav-link {
+text-align:center
+}
+
+.download-section ul li a span {
+font-size:14px
+}
+
+.mb-sect,.mb-social {
+margin:20px 0 0
+}
+
+.about-product img,.all-Features .body-dimension img,.bike-color .tab-pane img,.site-specification img {
+width:100%
+}
+}
