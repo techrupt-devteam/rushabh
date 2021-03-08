@@ -17,7 +17,8 @@
 					<div class="btn-toolbar pull-right">
 	              <div class="btn-group"> 
 		               <a href="<?php echo base_url('admin/manage_booking/export');?>" class="btn btn-primary btn-sm pull-right">Download Excel</a>
-		              </div>
+                   <a href="<?php echo base_url('admin/manage_booking/export_offer');?>" class="btn btn-danger btn-sm pull-right" style="margin-right: 15px;">Download Offer Detail</a>
+		            </div>
 		        </div>
 				</div>
 				<div class="panel-body">

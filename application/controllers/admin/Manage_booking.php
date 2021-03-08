@@ -54,6 +54,13 @@ function __construct(){
 		$message = ['success','Status updated successfully'];
 		echo json_encode($message);
 	}
+
+	public function export_offer()
+	{
+		$query = $this->db->select('booking.*,offer_item.*')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id')->where('offer_item.offer_item_id <>','0')->get();
+		$data['booking_list'] = $query->result_array();
+		$this->load->view('admin/booking_offer_export',$data);
+	}
 }
    
    
