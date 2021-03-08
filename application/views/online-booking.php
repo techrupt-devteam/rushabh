@@ -96,10 +96,10 @@
                 
             </div>
             
-             <div class="form-group col-md-">
+             <!-- <div class="form-group col-md-">
                           <div class="g-recaptcha" data-sitekey="6LcBH9kUAAAAAIntEDp0A3pBwPjc5FpdubYliEAl" data-callback="verifyCaptcha"></div>
                           <div id="g-recaptcha-error"></div>
-                        </div>
+                        </div> -->
         </div>
     </fieldset><button class="btn mt-3 redbutton" name="submit" type="submit" value="submit">Submit</button></form>
     </div>

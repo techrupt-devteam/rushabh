@@ -127,7 +127,7 @@
 <!-- End Cart -->
 
     <?php
-        $amt       = 100000;//100
+        $amt       = 100;//100000
        /* $name      = 'suraj';
         $email     = 'suraj.hoh@gmail.com';
         $mobile_no = '9766453326';
@@ -141,9 +141,8 @@
     <script type="text/javascript">
      
       var options = {
-    "key": "rzp_live_p49wR8Fnx8hJBc", //rzp_live_IZMQ4kxcwLhCKH
-    //test rzp_test_hqnjkaxFJyZfE6
-    //live rzp_live_IZMQ4kxcwLhCKH
+    "key": "rzp_test_nf0j2zhJBIeTOQ", 
+
     //"amount": 100, 
     "amount": "<?php echo $amt ?>", 
     "currency": "INR",

@@ -18,7 +18,7 @@ class Online_booking extends CI_Controller {
 		    $mobile          = $_POST['mobile'];
 		    $city            = $_POST['city'];
 		    $address         = $_POST['address'];
-		    $location         = $_POST['location'];
+		    $location        = $_POST['location'];
 		    $car             = $_POST['car'];
 		    $varient         = $_POST['varient'];
 		    $color           = $_POST['color'];
@@ -41,9 +41,7 @@ class Online_booking extends CI_Controller {
 		    $latest_image = '';
 		    if(isset($_FILES["adhar_cart"]["name"]) && !empty($_FILES["adhar_cart"]["name"]) || isset($_FILES["pan_card"]["name"]) && !empty($_FILES["pan_card"]["name"]))
 		    {
- 
 		        $file_name        = $_FILES["pan_card"]["name"];
-		         
 		        $file_tmp         = $_FILES["pan_card"]["tmp_name"];
 		        $ext              = pathinfo($file_name,PATHINFO_EXTENSION);
 		        $random_file_name = $randomString.'0.'.$ext;
@@ -75,7 +73,7 @@ class Online_booking extends CI_Controller {
 					'dob'=>$dob,
 					'booking_date'=>$data,
 					'transaction_id'=>'null',
-					'amount'=>'1000',//1
+					'amount'=>'1',//1000
 					'created_at'=>$data
 				);
 		        
@@ -133,16 +131,19 @@ class Online_booking extends CI_Controller {
 		}
 		/*Subscription close*/
 		
-		$current_url = current_url();
+		/*$current_url = current_url();
 		$url = 'https://rushabh2w.com/online_booking';
 		if($url == $current_url){
 		    redirect('page-not-found');
 		}else{
 		    $data['canonical'] = 'online-booking'; 
-		}
+		}*/
 		
 		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
-		$data['product'] = $this->db->query("SELECT car, ANY_VALUE(color) as color, MAX(on_road_price) as on_road_price FROM product GROUP BY car")->result();
+		/*$data['product'] = $this->db->query("SELECT car, ANY_VALUE(color) as color, MAX(on_road_price) as on_road_price FROM product GROUP BY car")->result();*/
+
+		$data['product'] = $this->db->query("SELECT * FROM product GROUP BY car")->result();
+
 		$data['title'] = 'Honda Online Booking | Rushabh Honda | Two Wheeler In Nashik';
 		$data['pgKeywords'] = '';
 		$data['pgDesc'] = 'Rushabh Honda is Honda Two wheeler Dealer in Nashik. Newest models of Two-wheeler Available at Best prices.Browse your favorite two-wheeler easily. Book now!';

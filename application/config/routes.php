@@ -50,9 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
-
-
-
 $route['sp-125'] = 'sp_125';
 $route['shine-disc-bsvi'] = 'shine_disc_bsvi';
 $route['cb-unicorn'] = 'cb_unicorn';
@@ -68,27 +65,22 @@ $route['our-workshop-locations'] = 'our_workshop_locations';
 $route['book-your-service'] = 'book_your_service';
 $route['online-booking'] = 'online_booking';
 $route['contact-us'] = 'contact_us';
+
+$route['rushabh-winner'] = 'rushabh_winner';
+$route['winner'] = 'rushabh_winner/winner';
+
+
 $route['download-e-brochure'] = 'download_e_brochure';
 $route['honda-shield'] = 'honda_shield';
 $route['honda-genuine-engine-oil'] = 'honda_genuine_engine_oil';
 $route['genuine-parts'] = 'genuine_parts';
-/*$route['book-an-appointment'] = 'book_an_appointment';*/
 $route['thank-you'] = 'thank_you';
+/*$route['book-an-appointment'] = 'book_an_appointment';*/
+
 $route['send-mail-contactus1'] = 'send_mail_contactus1';
 $route['page-not-found'] = 'empty_page';
 
-//$route['cd_110_dream'] = 'home';
-//$route['hornet2_0'] = 'home';
-//$route['activa_6g'] = 'home';
-//$route['book_your_service'] = 'home';
-//$route['activa_125_bs_vi'] = 'home';
-//$route['sp_125'] = 'home';
-//$route['shine_disc_bsvi'] = 'home';
-//$route['dio_BS_VI'] = 'home';
-//$route['download_e_brochure'] = 'home';
-//$route['cb_unicorn'] = 'home';
-//$route['online_booking'] = 'home';
-//$route['dio_BS_VI'] = 'home';
+
 $route['contact-us/contact-store'] = 'contact_us/contact_store';
 
 $route['admin/manage_specification/(:any)'] = 'admin/manage_specification/index/$1';

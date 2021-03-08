@@ -3,11 +3,11 @@
         <head>
         <meta charset="utf-8" />
         <?php
-        if($canonical!= " "){
+        /*if($canonical!= " "){
             echo '<link rel="canonical" href="'.$canonical.'">'; 
         }elseif($canonical == " "){
             echo '<link rel="canonical" href=" ">'; 
-        }
+        }*/
         ?>
         
         <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport" />
