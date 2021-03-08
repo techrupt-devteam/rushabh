@@ -108,13 +108,13 @@ function confirmWinner(){
         data: {booking_id:booking_id},
         /*cache: false,*/
         success: function(result){
+          console.log(result);
           var data = $.parseJSON(result);
           var item = data['msg'];
           console.log(data['msg']);
           if(data['msg']!="empty"){
             swal({
               title: "<span style='font-size: 20px;'><span style='color:red;'>Congrats!</span> Here's a gift for you.</span><br><span style='font-size:20px;'>"+item+"</span>",
-
               type: "success",
               timer: 5000,
               html: true,
@@ -123,11 +123,12 @@ function confirmWinner(){
               location.reload(true);
             });  
           }else if(data['msg']=="empty"){
-            var error_msg = "Sorry !\n You does not won any gift.";
+            var error_msg = "Sorry !<br><span style='font-size: 20px;'> You does not won any gift.</span>";
             swal({
               title: error_msg,
               type: "error",
               timer: 4000,
+              html: true,
               showConfirmButton: true
             }, function(){
               location.reload(true);
