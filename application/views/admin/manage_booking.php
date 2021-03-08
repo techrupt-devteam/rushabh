@@ -28,6 +28,7 @@
                     <tr >
                       <th >Sr.</th>
                       <th class="">Customer</th>
+                      <th class="">Offer Item</th>
                       <th class="">City </th>
                       <th class="">Booking Date </th>
                       <th class="">DOB</th>
@@ -45,7 +46,8 @@
                      <div><span><i class="la la-phone"></i></span><?php echo $row['mobile']; ?></div>  
                     </a> 
                   </td>
-                   <td><?php echo $row['city']; ?></td>
+                  <td><?php if($row['item']){ echo $row['item']; }else{ echo "-"; } ?></td>
+                  <td><?php echo $row['city']; ?></td>
                    <td style="text-align: center;"><?php $originalDate = $row['booking_date'];
                     if($originalDate!='null'){
                               $newDate = date("d-m-Y", strtotime($originalDate)); echo $newDate; 

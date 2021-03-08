@@ -15,7 +15,10 @@ function __construct(){
 		if(!$this->session->userdata('apple_adminusr')){	
 		  redirect("admin/secure");
 		}
-		$data['booking_list'] = $this->common->getAllRow('booking',' ORDER BY id DESC');
+		//$data['booking_list'] = $this->common->getAllRow('booking',' ORDER BY id DESC');
+		$query = $this->db->select('booking.*,offer_item.*')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id','left')->get();
+		$data['booking_list'] = $query->result_array();
+		
 	    $this->load->view('admin/header',$data);
 	    $this->load->view('admin/sidebar',$data);                      
 		$this->load->view('admin/manage_booking',$data);
