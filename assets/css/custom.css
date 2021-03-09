@@ -15,4 +15,9 @@ a,body,button,html,input{font-family:Montserrat,sans-serif;font-weight:400;color
     height: 100vh;
     overflow: hidden;
 }
+.winner-section{
+    background-image: url('../img/animations.gif');
+    background-size: 100% 100%;
+    overflow: hidden;
+}
   

@@ -26,7 +26,7 @@
 .winner-section {
     position: absolute;
     left: 50%;
-    width: 700px;
+    width: 650px;
     top: 50%;
     transform: translate(-50%,-50%);
     background-color: #fff;
@@ -43,6 +43,15 @@
     top: 0;
     width: 100%;
     height: 100%;
+}
+.winner-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fbfbfbd6;
+    left: 0;
+    top: 0;
 }
 .rushabh-winner h2 {
     font-size: 45px;
@@ -119,7 +128,7 @@
 <section class="rushabh-banner">
   <div class="top-section-menu" style="z-index: 99;position: relative;">
     <div class="container">
-      <ul class="float-left">
+      <ul class="float-left col-md-8">
         <li> 
          <a href="mailto:enquiry@rushabh2w.com"><i class="fa fa-envelope-o" style="font-size: 16px;"></i> enquiry@rushabh2w.com </a> </li>
         <li> <a href="tel:8888877649"><i class="fa fa-phone" style="font-size: 16px;"></i> +91 88888 77649</a> </li>
@@ -145,7 +154,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <label>Your Booking ID <span style="color:red">*</span></label>
-                        <input class="form-control mt-2 text-center" id="booking_id" name="booking_id" placeholder="Your Booking ID"  data-parsley-pattern-message="Enter Valid Name (text only)" style="min-height: 54px;border-width: 3px;" value="" required="required">
+                        <input class="form-control mt-2 text-center" id="booking_id" name="booking_id" placeholder="Your Booking ID"  data-parsley-pattern-message="Enter Valid Name (text only)" value="" required="required" style="min-height: 54px;border: 2px solid #8a8585;border-radius: 4px;">
                     </div>
                 </div>
             </div>
