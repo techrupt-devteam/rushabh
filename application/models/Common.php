@@ -949,28 +949,23 @@ function get_most_root_of_any_id($id=NULL){
 	}
 
 	function SmsMobileOnlineBooking($id,$mobile){
+		$query = $this->common->getOneRow('sms_config','where 1');		
+		$array_data = $this->db->select('booking.*,offer_item.*')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id')->where('id',$id)->get();
+		$booking_data  = $array_data->row_array();
 		
-		$query = $this->common->getOneRow('sms_config','where 1');	
+		$param['Message'] = 'Dear '.$booking_data['name'].','.'\r\n'.'Thank you for booking '.$booking_data['car'].'-'.$booking_data['varient'].'.'.'Congrats! Here is a gift for you '.$booking_data['item'].'.'.' You can redeem it at the time of delivery.'.' One of our team member shall get back to you shortly.'.'\r\n'.'Team Rushubh Honda,'.'\r\n'.'Nashik: 0253-6643444';
+		/*$url = $query['base_url']."username=".$query['username']."&password=".$query['password']."&senderid=".$query['sender_id']."&route=".$query['route']."&number=".$mobile."&message=".rawurlencode($param['Message']);*/
 
-		$booking_data = $this->common->getOneRow('booking',"WHERE id='".$id."'");
-		
+		//http://alerts2.netsolitsolution.com/http-api.php?
 
-		$param['Message'] = 'Dear '.$booking_data['name'].','.'\r\n'.'Thank you for booking '.$booking_data['car'].'-'.$booking_data['varient'].'.'.' One of our team member shall get back to you shortly.'.'\r\n'.'Team Rushubh Honda,'.'\r\n'.'Nashik: 0253-6643444';
-		//SUCCESSFULLY RUN = http://alerts2.netsolitsolution.com/http-api.php?username=rushab&password=rushab123&senderid=RUSHBH&route=1&unicode=1&number=9284225229&message=Hello
-
-		//http://alerts2.netsolitsolution.com/http-api.php?username=enterusername&password=enterpassword&senderid=6char-senderid&route=1&unicode=2&number=enternumber&message=हेलो 
-
-		//$url = $query['base_url']."username=".$query['username']."&password=".$query['password']."&to=".$mobile."&text=".rawurlencode($param['Message'])."&from=".$query['sender_id'];
-		
 		$url = $query['base_url']."username=".$query['username']."&password=".$query['password']."&senderid=".$query['sender_id']."&route=".$query['route']."&number=".$mobile."&message=".rawurlencode($param['Message']);
-		//echo $url;
-		//exit();
+
 		$ch = curl_init($url); 
-		  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-		  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-		  $curl_scraped_page = curl_exec($ch); 
-		  curl_close($ch);  
-		  $curl_scraped_page;
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+		$curl_scraped_page = curl_exec($ch); 
+		curl_close($ch);  
+		$curl_scraped_page;
 	}
 
 

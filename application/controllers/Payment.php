@@ -79,6 +79,7 @@ class Payment extends CI_Controller {
             }
             if ($result) {
             $date = date('d-m-Y h:i:s A');
+            $to_mobile = $booking->mobile;
             /*$update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."' where id=$token_id ");*/
 
             /*Offer Item Id Code Start*/
@@ -291,6 +292,8 @@ class Payment extends CI_Controller {
 ';
 $this->common->SmsMobileOnlineBooking($token_id, $to_mobile);
  mail($to, $subject, $message, $headers);*/
+
+          $this->common->SmsMobileOnlineBooking($token_id, $to_mobile);
             header("Location: http://localhost/rushabh/payment/success");
             /*header("Location: https://rushabh2w.com/payment/success");*/
             exit();
