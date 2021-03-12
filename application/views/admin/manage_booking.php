@@ -1,4 +1,3 @@
-
 <div class="content-wrapper">
  <div class="col-md-12">
   <div class="row">
@@ -26,14 +25,16 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr >
-                      <th >Sr.</th>
+                      <th>Sr.</th>
                       <th class="">Customer</th>
-                      <th class="">Offer Item</th>
-                      <th class="">City </th>
-                      <th class="">Booking Date </th>
+                      <th class="">Offer&nbsp;Item</th>
+                      <th class="">Booking&nbsp;Id</th>
+                      <th class="">City</th>
+                      <th class="">Booking&nbsp;Date</th>
                       <th class="">DOB</th>
-                      <th class="">Payment Status</th>
-                      <th class="">Status</th>
+                      <th class="">Payment&nbsp;Status</th>
+                      <th class="">Delivery&nbsp;Status</th>
+                      <th class="">Offer&nbsp;Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -47,6 +48,7 @@
                     </a> 
                   </td>
                   <td><?php if($row['item']){ echo $row['item']; }else{ echo "-"; } ?></td>
+                  <td><?php if($row['booking_id']){ echo $row['booking_id']; }else{ echo "-"; } ?></td>
                   <td><?php echo $row['city']; ?></td>
                    <td style="text-align: center;"><?php $originalDate = $row['booking_date'];
                     if($originalDate!='null'){
@@ -60,7 +62,6 @@
                             }else{
                               echo '-';
                             }?></td>
-                           
                    <td><?php echo $row['payment_status']; ?></td>
                    <td>
                     <div class="col-md-12">
@@ -69,15 +70,22 @@
                         <option value="Select">Select</option>
                         <option <?php if($row['status'] == 'Delivered'){  ?> selected="selected" <?php } ?> value="Delivered">Delivered</option>
                         <option <?php if($row['status'] == 'Non Delivered'){  ?> selected="selected" <?php } ?> value="Non Delivered">Non Delivered</option>
-                        
                       </select>
                     </div>
                   </td>
-                  		           
+                  <td>
+                    <div class="col-md-12">
+                      <input type="hidden" value="<?php echo $row['id']; ?>">
+                      <select class="form-control" name="offer_status" onchange="selectOfferStatus(this);" id="offer_status" data="<?php echo $row['id']; ?>">
+                        <option value="Select">Select</option>
+                         <option <?php if($row['offer_status'] == 'Delivered'){  ?> selected="selected" <?php } ?> value="Delivered">Delivered</option>
+                        <option <?php if($row['offer_status'] == 'Non Delivered'){  ?> selected="selected" <?php } ?> value="Non Delivered">Non Delivered</option>
+                      </select>
+                    </div>
+                  </td>
                   </tr>
                   <?php endforeach; ?>
                   </tbody>
-                  
                 </table>
               </div>
 				</div>
@@ -89,17 +97,12 @@
 </div>
 
 <script type="text/javascript">
-  
   function selectStatus(el)
   {
-
     var status = $(el).val();
     var id = $(el).attr('data');
-
-
     console.log(status);
     if(status!=""){
-     
       $.ajax({
         url: "<?php echo base_url("admin/manage_booking/savedata");?>",
         type: "POST",
@@ -110,27 +113,35 @@
         cache: false,
         success: function(dataResult){
           var dataResult = JSON.parse(dataResult);
-
-          console.log(dataResult);
           window.location.href="<?php echo base_url("admin/manage_booking");?>";
           alert('Status updated successfully');
-          /*if(dataResult.statusCode==200){
-            $("#butsave").removeAttr("disabled");
-            $('#fupForm').find('input:text').val('');
-            $("#success").show();
-            $('#success').html('Data added successfully !');            
-          }
-          else if(dataResult.statusCode==201){
-             alert("Error occured !");
-          }*/
-          
         }
       });
     }
     else{
       alert('Please fill all the field !');
     }
-
-
   }
+
+function selectOfferStatus(el)
+{
+  var offer_status = $(el).val();
+  var id = $(el).attr('data');
+  if(offer_status!=""){
+    $.ajax({
+      url: "<?php echo base_url("admin/manage_booking/saveofferdata");?>",
+      type: "POST",
+      data: { offer_status: offer_status,id: id },
+      cache: false,
+      success: function(dataResult){
+        var dataResult = JSON.parse(dataResult);
+        window.location.href="<?php echo base_url("admin/manage_booking");?>";
+        alert('Offer status updated successfully');
+      }
+    });
+  }
+  else{
+    alert('Please fill all the field !');
+  }
+}
 </script>

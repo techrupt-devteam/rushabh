@@ -156,11 +156,11 @@ class Online_booking extends CI_Controller {
     {
         $id = $this->input->post('id');
         if ($id != null) {
-            $city = $this->db->query("Select * FROM product where car='$id' order by varient asc")->result();
+            $city = $this->db->query("Select * FROM product where car='$id' group by varient order by varient asc")->result();
                         echo "<option  value=''>Select Variant</option>";
                 if (count($city) > 0) {
                     foreach ($city as $city_details) {
-                        echo "<option value='" . $city_details->varient . "'>" . $city_details->varient . "</option>";
+						echo "<option value='" . $city_details->varient . "'>" . $city_details->varient ."</option>";
                     }
                 } else {
                     echo "<option  value=''>-</option>";

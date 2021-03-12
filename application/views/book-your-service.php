@@ -14,9 +14,9 @@
             </div>
         </div>
     </div>
-    <!--<marquee width="100%" direction="left" height="40px" style="padding: 10px;font-size: 16px;color: #f00;font-weight: 600;">
-Sevice booking is close from <span class="text-dark">12th to 16th </span> Nov 2020 for <span class="text-dark">Mumbai Naka</span> .Sorry for inconvenience.
-</marquee>-->
+    <marquee width="100%" direction="left" height="40px" style="padding: 10px;font-size: 16px;color: #f00;font-weight: 600;">
+Sevice booking is close on <span class="text-dark">13th March 2021. </span>Sorry for inconvenience.
+</marquee>
   <div class="container-fluid innerpage">
     <div class="container">
       <div class="contact-form mt-5">
@@ -95,14 +95,10 @@ Sevice booking is close from <span class="text-dark">12th to 16th </span> Nov 20
 
             </div>
             <div class="row">
-              
-              
-              <div class="col-md-12 mb-2">
+             <!--  <div class="col-md-12 mb-2">
               <div class="g-recaptcha" data-sitekey="6LcBH9kUAAAAAIntEDp0A3pBwPjc5FpdubYliEAl" data-callback="verifyCaptcha"></div>
                 <div id="g-recaptcha-error"></div>
-              </div> 
-              
-              
+              </div>  -->
             </div>
           </fieldset>
           
@@ -149,8 +145,18 @@ function handler(e){
    console.log(date);
    var location = $('#location').val();
    //console.log(location);
+
+   if(date=='2021-03-13')
+   {
+      alert('Service booking is close today');
+      $('#datepicker_today').val('');
+      return false;
+   }else{
+      return true;
+   }
+  
     
-  if(location=='Mumbai Naka'){
+ /* if(location=='Mumbai Naka'){
      if(date=='2020-12-31'){
          alert('Service booking is close today');
         $('#datepicker_today').val('');
@@ -187,7 +193,7 @@ function handler(e){
     alert('Please select location first !!');
     $('#datepicker_today').val('');
     return false;
-  }
+  }*/
 }
 
 function selectLocation()

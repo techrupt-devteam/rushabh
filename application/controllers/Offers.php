@@ -51,17 +51,16 @@ class Offers extends CI_Controller {
 			redirect('thank_you');		
 		}
 		
-	/*	$current_url = current_url();
+		/*$current_url = current_url();
 		$url = 'https://rushabh2w.com/cb_unicorn';
 		if($url == $current_url){
 		    redirect('page-not-found');
 		}else{
 		    $data['canonical'] = 'offers'; 
 		}*/
-		
 		$data['canonical'] = 'offers'; 
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Offers | Rushabh Honda | Two Wheeler Dealers In Nashik';
 		$data['pgKeywords'] = 'Offers Avialable in Rushabh Honda Branches in Nashik';
 		$data['pgDesc'] = 'Honda unbelievable offers available at Rushabh Honda. Available for limited time only! Checkout newest Two-wheeler easily online and book your choice today!';

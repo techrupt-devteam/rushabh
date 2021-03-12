@@ -9,7 +9,6 @@
             echo '<link rel="canonical" href=" ">'; 
         }*/
         ?>
-        
         <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport" />
         <meta content="<?php echo $pgKeywords  ?>" name="keywords" />
         <meta content="<?php echo $pgDesc  ?>" name="description" />

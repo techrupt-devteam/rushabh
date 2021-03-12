@@ -148,13 +148,14 @@
 
     <div class="row cs-gallery no-gutters winner-section" lg-uid="lg0">
         <div class="col-md-12 px-3 px-lg-5">
-        <div class="text-center rushabh-winner"><h2>Rushabh Winner</h2></div>
+        <div class="text-center rushabh-winner"><h2>Assured Gift</h2><span>Please check your message box to know the Booking ID.</span></div><br><br>
         <form action="" method="post" id="offer">
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <label>Your Booking ID <span style="color:red">*</span></label>
-                        <input class="form-control mt-2 text-center" id="booking_id" name="booking_id" placeholder="Your Booking ID"  data-parsley-pattern-message="Enter Valid Name (text only)" value="" required="required" style="min-height: 54px;border: 2px solid #8a8585;border-radius: 4px;">
+                        <input class="form-control mt-2 text-center" autocomplete="off" id="booking_id" name="booking_id" placeholder="Your Booking ID"  data-parsley-pattern-message="Enter Valid Name (text only)" value="" required="required" style="min-height: 54px;border: 2px solid #8a8585;border-radius: 4px;">
+                        <span id="err_booking_id" style="color: red;"></span>
                     </div>
                 </div>
             </div>
@@ -182,7 +183,6 @@
 </section>
 </main>
 
-
 <script type="text/javascript" src="assets/floatton/jquery.js"></script>
 <script src="assets/lib/js/bootstrap.js"></script>
 <script src="assets/lib/js/bootstrap.bundle.min.js"></script>
@@ -197,13 +197,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
 <!-- Sweetalert message script close-->
+<script type="text/javascript"> 
 
-<script type="text/javascript">    
+function validation(){
+  var booking_id = $('#booking_id').val();
+  if(booking_id == '00000'){
+    $('#err_booking_id').html("This value is required.");
+    return false;
+  }else{
+    return true;
+  }
+}
+/*SELECT booking.*, offer_item.* FROM booking INNER JOIN offer_item ON booking.offer_item_id = offer_item.offer_item_id where booking_id='$booking_id'*/
+
 function confirmWinner(){
     var $selector = $('#offer'),
     form = $selector.parsley();
     var booking_id = $('#booking_id').val();
+    console.log(booking_id);
+
     if(form.validate()) {
+        /*if (e.keyCode == 13) {*/
+        if(validation()){
         $.ajax({
         type: "POST",
         url: "<?php echo base_url(''); ?>rushabh_winner/winner",
@@ -238,6 +253,7 @@ function confirmWinner(){
           }
         }
       });
+      }
     }
 }
 </script>

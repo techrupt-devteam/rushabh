@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Manage_booking extends CI_Controller {
-function __construct(){
+	function __construct(){
         parent::__construct();
 		$this->load->model('common','',TRUE);
 		$this->load->helper('functions_helper');
@@ -19,6 +19,8 @@ function __construct(){
 		$query = $this->db->select('booking.*,offer_item.*')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id','left')->get();
 		$data['booking_list'] = $query->result_array();
 		
+		$data['offer_item_list'] = $this->common->getAllRow('offer_item',' ORDER BY offer_item_id ASC');
+
 	    $this->load->view('admin/header',$data);
 	    $this->load->view('admin/sidebar',$data);                      
 		$this->load->view('admin/manage_booking',$data);
@@ -37,7 +39,6 @@ function __construct(){
 		if(!$this->session->userdata('apple_adminusr')){	
 		  redirect("admin/secure");
 		}
-		
 		$data['booking'] = $this->common->getAllRow('booking','where id='.$id.' ORDER BY id DESC');
 	    $this->load->view('admin/header',$data);
 	    $this->load->view('admin/sidebar',$data);                      
@@ -50,10 +51,18 @@ function __construct(){
 		$message = '';
 		$data_in['id']=$this->input->post('id');
 		$data_in['status']=$this->input->post('status');
-		
 		//$this->common->insertRecord('booking', $data_in);	
 		$this->common->updateRecord('booking',$data_in,"id = ". $data_in['id']);
+		$message = ['success','Status updated successfully'];
+		echo json_encode($message);
+	}
 
+	public function saveofferdata()
+	{
+		$message = '';
+		$data_in['id'] = $this->input->post('id');
+		$data_in['offer_status'] = $this->input->post('offer_status');
+		$this->common->updateRecord('booking',$data_in,"id = ". $data_in['id']);
 		$message = ['success','Status updated successfully'];
 		echo json_encode($message);
 	}

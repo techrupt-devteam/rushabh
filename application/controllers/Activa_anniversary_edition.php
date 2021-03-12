@@ -61,8 +61,6 @@ class Activa_anniversary_edition extends CI_Controller {
 		    $data['canonical'] = 'activa-anniversary-edition'; 
 		}
 		
-		
-		
 		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
 		$data['bikes'] = $this->common->getAllRow('bikes_scooters','where type="Bikes" ORDER BY id ASC');
 		$data['scooters'] = $this->common->getAllRow('bikes_scooters','where type="Scooters" ORDER BY id ASC');
