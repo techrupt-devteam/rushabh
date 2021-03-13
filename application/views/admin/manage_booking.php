@@ -57,11 +57,11 @@
                               echo '-';
                             }?></td>
                     <td style="text-align: center;"><?php $originalDate = $row['dob'];
-                    if($originalDate!='null' && $originalDate!=''){
-                              $newDate = date("d-m-Y", strtotime($originalDate)); echo $newDate; 
-                            }else{
-                              echo '-';
-                            }?></td>
+                      if($originalDate!='null' && $originalDate!=''){
+                        $newDate = date("d-m-Y", strtotime($originalDate)); echo $newDate; 
+                        }else{
+                        echo '-';
+                    }?></td>
                    <td><?php echo $row['payment_status']; ?></td>
                    <td>
                     <div class="col-md-12">
@@ -133,8 +133,8 @@ function selectOfferStatus(el)
       cache: false,
       success: function(dataResult){
         console.log(dataResult);
-        
         var dataResult = JSON.parse(dataResult);
+
         window.location.href="<?php echo base_url("admin/manage_booking");?>";
         alert('Offer status updated successfully');
       }

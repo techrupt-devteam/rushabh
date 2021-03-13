@@ -71,11 +71,17 @@ class Manage_booking extends CI_Controller {
           	$delivery_qty_value = $row->delivery_qty;
           	$allocated_offer_qty_value = $row->allocated_offer_qty;
         	}
-        	$value['allocated_offer_qty'] = $allocated_offer_qty_value - 1;
         	$value['delivery_qty'] = $delivery_qty_value + 1;	
         	$this->common->updateRecord('offer_item',$value,"offer_item_id = ". $offer_id);
+		}elseif($data_in['offer_status'] == 'Non Delivered'){
+			$offer_data = $this->db->select('*')->from('offer_item')->where('offer_item_id',$offer_id)->get()->result();
+        	foreach($offer_data as $row){
+          	$delivery_qty_value = $row->delivery_qty;
+          	$allocated_offer_qty_value = $row->allocated_offer_qty;
+        	}
+        	$value['delivery_qty'] = $delivery_qty_value - 1;	
+        	$this->common->updateRecord('offer_item',$value,"offer_item_id = ". $offer_id);
 		}
-	
 
 		$this->common->updateRecord('booking',$data_in,"id = ". $data_in['id']);
 		$message = ['success','Offer status updated successfully'];
