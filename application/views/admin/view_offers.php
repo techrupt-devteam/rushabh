@@ -30,6 +30,7 @@
                       <th class="">Total&nbsp;Qty</th>
                       <th class="">Allocated&nbsp;Qty</th>
                       <th class="">Delivery&nbsp;Qty</th>
+                      <th class="">Pending&nbsp;Qty</th>
                       <th class="">Amount</th>
                     </tr>
                   </thead>
@@ -42,6 +43,7 @@
                    <td><?php echo $row['qty']; ?></td> 
                    <td><?php echo $row['allocated_offer_qty']; ?></td> 
                    <td><?php echo $row['delivery_qty']; ?></td> 
+                   <td><?php echo $row['qty'] - $row['delivery_qty']; ?></td> 
                    <td><?php echo $row['total_amount']; ?></td> 
                   </tr>
                   <?php endforeach; ?>
