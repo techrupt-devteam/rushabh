@@ -16,7 +16,7 @@ class Manage_booking extends CI_Controller {
 		  redirect("admin/secure");
 		}
 		//$data['booking_list'] = $this->common->getAllRow('booking',' ORDER BY id DESC');
-		$query = $this->db->select('booking.*,offer_item.*')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id','left')->get();
+		$query = $this->db->select('booking.*,offer_item.*,booking.status as delivery_status')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id','left')->get();
 		$data['booking_list'] = $query->result_array();
 		
 		$data['offer_item_list'] = $this->common->getAllRow('offer_item',' ORDER BY offer_item_id ASC');
@@ -40,6 +40,8 @@ class Manage_booking extends CI_Controller {
 		  redirect("admin/secure");
 		}
 		$data['booking'] = $this->common->getAllRow('booking','where id='.$id.' ORDER BY id DESC');
+		
+
 	    $this->load->view('admin/header',$data);
 	    $this->load->view('admin/sidebar',$data);                      
 		$this->load->view('admin/view_booking',$data);
@@ -51,7 +53,6 @@ class Manage_booking extends CI_Controller {
 		$message = '';
 		$data_in['id']=$this->input->post('id');
 		$data_in['status']=$this->input->post('status');
-		//$this->common->insertRecord('booking', $data_in);	
 		$this->common->updateRecord('booking',$data_in,"id = ". $data_in['id']);
 		$message = ['success','Status updated successfully'];
 		echo json_encode($message);
@@ -62,8 +63,22 @@ class Manage_booking extends CI_Controller {
 		$message = '';
 		$data_in['id'] = $this->input->post('id');
 		$data_in['offer_status'] = $this->input->post('offer_status');
+		$offer_id = $this->input->post('offer_id');
+
+		if($data_in['offer_status'] == 'Delivered'){
+			$offer_data = $this->db->select('*')->from('offer_item')->where('offer_item_id',$offer_id)->get()->result();
+        	foreach($offer_data as $row){
+          	$delivery_qty_value = $row->delivery_qty;
+          	$allocated_offer_qty_value = $row->allocated_offer_qty;
+        	}
+        	$value['allocated_offer_qty'] = $allocated_offer_qty_value - 1;
+        	$value['delivery_qty'] = $delivery_qty_value + 1;	
+        	$this->common->updateRecord('offer_item',$value,"offer_item_id = ". $offer_id);
+		}
+	
+
 		$this->common->updateRecord('booking',$data_in,"id = ". $data_in['id']);
-		$message = ['success','Status updated successfully'];
+		$message = ['success','Offer status updated successfully'];
 		echo json_encode($message);
 	}
 

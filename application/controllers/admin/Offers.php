@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Offers extends CI_Controller {
-function __construct(){
+	function __construct(){
         parent::__construct();
 		$this->load->model('common','',TRUE);
 		$this->load->helper('functions_helper');
@@ -78,7 +78,7 @@ function __construct(){
 		$this->load->view('admin/footer');
 	}
 
-  	function delete()
+  	public function delete()
 	{ 
 		$id 	=	$this->uri->segment(4);		
 		$this->db->where('id', $id);
@@ -86,6 +86,23 @@ function __construct(){
 		print '<script>alert("Record deleted successfully");
 					window.location.href = "'.base_url().'admin/offers";
 					</script>';
+	}
+
+	public function view()
+	{
+		$data['message']="";
+		$data['page_title']="Book appointment";
+		
+		$id = $this->uri->segment(4);
+		$data['offer_item_data'] = $this->common->getAllRow('offer_item','where offer_id=9');
+		if(!$this->session->userdata('apple_adminusr')){	
+		  redirect("admin/secure");
+		}
+
+		$this->load->view('admin/header',$data);
+	    $this->load->view('admin/sidebar',$data);                      
+		$this->load->view('admin/view_offers',$data);
+		$this->load->view('admin/footer');
 	}
 }
    

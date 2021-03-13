@@ -1,30 +1,25 @@
 <main>
-        <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light" style="background-image: url(assets/images/book--service.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 text-sm-left text-center">
-                    <h1>Book Your Service</h1>
-                </div>
-                <div class="col-md-6 col-sm-6 text-sm-right text-center">
-                    <ul class="breadcrumb">
-                        <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                        <li class="active">Services</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <marquee width="100%" direction="left" height="40px" style="padding: 10px;font-size: 16px;color: #f00;font-weight: 600;">
-Sevice booking is close on <span class="text-dark">13th March 2021. </span>Sorry for inconvenience.
-</marquee>
+  <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light" style="background-image: url(assets/images/book--service.jpg);">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 col-sm-6 text-sm-left text-center">
+              <h1>Book Your Service</h1>
+          </div>
+          <div class="col-md-6 col-sm-6 text-sm-right text-center">
+              <ul class="breadcrumb">
+                  <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                  <li class="active">Services</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<marquee width="100%" direction="left" height="40px" style="padding: 10px;font-size: 16px;color: #f00;font-weight: 600;"> Sevice booking is close on <span class="text-dark">13th March 2021. </span>Sorry for inconvenience. </marquee>
   <div class="container-fluid innerpage">
     <div class="container">
       <div class="contact-form mt-5">
         <!-- <form action="send_mail_bookservice.php" class="registration-form" method="post" role="form" data-parsley-validate="parsley" onsubmit="return submitUserForm();"> -->
-
           <form action="" class="registration-form" method="post" data-parsley-validate="parsley" onsubmit="return submitUserForm();"><!-- send_mail_bookservice.php -->
-
-
           <fieldset class="form-book">
             <legend>Personal & Vehicle Detail</legend>
             <div class="row">

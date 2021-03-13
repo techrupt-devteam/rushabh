@@ -50,7 +50,7 @@
                   <td><?php if($row['item']){ echo $row['item']; }else{ echo "-"; } ?></td>
                   <td><?php if($row['booking_id']){ echo $row['booking_id']; }else{ echo "-"; } ?></td>
                   <td><?php echo $row['city']; ?></td>
-                   <td style="text-align: center;"><?php $originalDate = $row['booking_date'];
+                  <td style="text-align: center;"><?php $originalDate = $row['booking_date'];
                     if($originalDate!='null'){
                               $newDate = date("d-m-Y", strtotime($originalDate)); echo $newDate; 
                             }else{
@@ -65,21 +65,21 @@
                    <td><?php echo $row['payment_status']; ?></td>
                    <td>
                     <div class="col-md-12">
-                      <input type="hidden"  value="<?php echo $row['id']; ?>">
+                      <input type="hidden" value="<?php echo $row['id']; ?>">
                       <select class="form-control" name="status" onchange="selectStatus(this);" id="status" data="<?php echo $row['id']; ?>" name="id" id="id">
                         <option value="Select">Select</option>
-                        <option <?php if($row['status'] == 'Delivered'){  ?> selected="selected" <?php } ?> value="Delivered">Delivered</option>
-                        <option <?php if($row['status'] == 'Non Delivered'){  ?> selected="selected" <?php } ?> value="Non Delivered">Non Delivered</option>
+                        <option <?php if($row['delivery_status'] == 'Delivered'){  ?> selected="selected" <?php } ?> value="Delivered">Delivered</option>
+                        <option <?php if($row['delivery_status'] == 'Non Delivered'){  ?> selected="selected" <?php } ?> value="Non Delivered">Non Delivered</option>
                       </select>
                     </div>
                   </td>
                   <td>
                     <div class="col-md-12">
                       <input type="hidden" value="<?php echo $row['id']; ?>">
-                      <select class="form-control" name="offer_status" onchange="selectOfferStatus(this);" id="offer_status" data="<?php echo $row['id']; ?>">
-                        <option value="Select">Select</option>
+                      <select class="form-control" name="offer_status" onchange="selectOfferStatus(this);" id="offer_status" data="<?php echo $row['id']; ?>" data1="<?php echo $row['offer_item_id']; ?>">
+                         <option value="Select">Select</option>
                          <option <?php if($row['offer_status'] == 'Delivered'){  ?> selected="selected" <?php } ?> value="Delivered">Delivered</option>
-                        <option <?php if($row['offer_status'] == 'Non Delivered'){  ?> selected="selected" <?php } ?> value="Non Delivered">Non Delivered</option>
+                         <option <?php if($row['offer_status'] == 'Non Delivered'){  ?> selected="selected" <?php } ?> value="Non Delivered">Non Delivered</option>
                       </select>
                     </div>
                   </td>
@@ -93,7 +93,6 @@
 		</div>
 	</div>
 </section>
-
 </div>
 
 <script type="text/javascript">
@@ -106,12 +105,10 @@
       $.ajax({
         url: "<?php echo base_url("admin/manage_booking/savedata");?>",
         type: "POST",
-        data: {
-          status: status,
-          id: id
-        },
+        data: { status: status, id: id },
         cache: false,
         success: function(dataResult){
+          console.log(dataResult);
           var dataResult = JSON.parse(dataResult);
           window.location.href="<?php echo base_url("admin/manage_booking");?>";
           alert('Status updated successfully');
@@ -121,19 +118,22 @@
     else{
       alert('Please fill all the field !');
     }
-  }
+}
 
 function selectOfferStatus(el)
 {
   var offer_status = $(el).val();
   var id = $(el).attr('data');
+  var offer_id = $(el).attr('data1');
   if(offer_status!=""){
     $.ajax({
       url: "<?php echo base_url("admin/manage_booking/saveofferdata");?>",
       type: "POST",
-      data: { offer_status: offer_status,id: id },
+      data: { offer_status: offer_status,id: id,offer_id:offer_id },
       cache: false,
       success: function(dataResult){
+        console.log(dataResult);
+        
         var dataResult = JSON.parse(dataResult);
         window.location.href="<?php echo base_url("admin/manage_booking");?>";
         alert('Offer status updated successfully');

@@ -1,4 +1,3 @@
-
 <div class="content-wrapper">
  <div class="col-md-12">
   <div class="row">
@@ -29,9 +28,8 @@
                     <tr >
                       <th >Sr</th>
                       <th class="">Title</th>
-                      <th class="">Image </th>
-                      <th class="">Action </th>
-                      
+                      <th class="">Image</th>
+                      <th class="">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -39,16 +37,16 @@
                    <tr>
                    <td><?php echo $cnt; ?></td>
                    <td><?php echo $row['title']; ?></td>
-                   <td><img style="width:70px; height:70px;" src="<?php echo base_url(); ?>assets/admin/post_image/<?php echo $row['image']; ?>"></td>
-                   <td>
-                      <a href="<?php echo base_url(); ?>admin/offers/delete/<?php echo $row['id'] ?>" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" data-original-title="Delete Offer">
-                        <i class="la la-trash icon"></i>
-                      </a>
+                   <td><?php if($row['image']){ ?><img style="width:70px; height:70px;" src="<?php echo base_url(); ?>assets/admin/post_image/<?php echo $row['image']; ?>" ><?php }else{ ?> No Image <?php } ?></td>
+                    <td>
+                      <a href="<?php echo base_url(); ?>admin/offers/delete/<?php echo $row['id'] ?>" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" data-original-title="Delete Offer"><i class="la la-trash icon"></i></a>
+                      <?php if($row['show_on_website']==0){ ?>
+                        <a href="<?php echo base_url(); ?>admin/offers/view/<?php echo $row['id'] ?>" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" data-original-title="View Offer"><i class="la la-binoculars icon"></i></a>
+                      <?php } ?>
                     </td>
                   </tr>
                   <?php endforeach; ?>
                   </tbody>
-                  
                 </table>
               </div>
         </div>
