@@ -225,7 +225,7 @@ class Payment extends CI_Controller {
                 if($total_body_cover != 20 && $quantity != 0){
                   $total_qty = $quantity - 1;
                   $total_allocated_qty = $allocated_quantity + 1;
-                  
+
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offer_id");
                   
