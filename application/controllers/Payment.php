@@ -92,17 +92,10 @@ class Payment extends CI_Controller {
 
             $num = 1;
             if($vehicle == 'ACTIVA 125' || $vehicle == 'ACTIVA 6G' || $vehicle == 'DIO' || $vehicle == 'GRAZIA'){
-              
               $final_arr = array_values(array_diff($myarray, array(7)));
-
             }else{
-              
               $final_arr = array_values(array_diff($myarray, array(1)));
             }
-
-            //print_r($final_arr); die;
-
-
 
             $offer_id_value = array_rand( $final_arr, $num );
             $offerid = $final_arr[$offer_id_value];

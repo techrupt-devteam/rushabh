@@ -22,7 +22,7 @@
               <div class="panel-heading"> View Booking
                 <div class="btn-toolbar pull-right">
                   <div class="btn-group"> 
-                    <a href="<?php echo site_url('admin/offers');?>" class="btn btn-info pull-right"><strong><i class="la la-arrow-right icon"></i></strong></a>
+                    <a href="<?php echo site_url('admin/manage_booking');?>" class="btn btn-info pull-right"><strong><i class="la la-arrow-right icon"></i></strong></a>
                   </div>
                 </div>
               </div>
