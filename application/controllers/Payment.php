@@ -91,11 +91,25 @@ class Payment extends CI_Controller {
             }
 
             $num = 1;
+            
+            //print_r($myarray); die;
+            //Array ( [0] => 2 [1] => 3 [2] => 4 [3] => 5 [4] => 6 [5] => 7 [6] => 8 [7] => 9 [8] => 10 )
+
+
             if($vehicle == 'ACTIVA 125' || $vehicle == 'ACTIVA 6G' || $vehicle == 'DIO' || $vehicle == 'GRAZIA'){
+              
               $final_arr = array_values(array_diff($myarray, array(7)));
+
             }else{
+              
               $final_arr = array_values(array_diff($myarray, array(1)));
             }
+
+            //print_r($final_arr); die;
+            //Array ( [0] => 2 [1] => 3 [2] => 4 [3] => 5 [4] => 6 [5] => 8 [6] => 9 [7] => 10 )
+
+
+
 
             $offer_id_value = array_rand( $final_arr, $num );
             $offerid = $final_arr[$offer_id_value];
@@ -124,7 +138,8 @@ class Payment extends CI_Controller {
 
               if($offerid == 8 && $vehicle == 'ACTIVA 125'){
                 //$myarray1 = array_diff($myarray, array('7'));
-                $array_without_body_cover = array_diff($myarray, array('8'));
+
+                $array_without_body_cover = array_diff($final_arr, array('8'));
                 $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                 $offer_id = $array_without_body_cover[$offer_id_value2];
                 
@@ -303,7 +318,7 @@ class Payment extends CI_Controller {
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offerid."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
                    $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('8'));
+                  $array_without_body_cover = array_diff($final_arr, array('8'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -323,7 +338,7 @@ class Payment extends CI_Controller {
                   
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('5'));
+                  $array_without_body_cover = array_diff($final_arr, array('5'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -343,7 +358,7 @@ class Payment extends CI_Controller {
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                   
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('2'));
+                  $array_without_body_cover = array_diff($final_arr, array('2'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -362,7 +377,7 @@ class Payment extends CI_Controller {
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offerid."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('3'));
+                  $array_without_body_cover = array_diff($final_arr, array('3'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -382,7 +397,7 @@ class Payment extends CI_Controller {
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                   
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('4'));
+                  $array_without_body_cover = array_diff($final_arr, array('4'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -402,7 +417,7 @@ class Payment extends CI_Controller {
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                   
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('6'));
+                  $array_without_body_cover = array_diff($final_arr, array('6'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -422,7 +437,7 @@ class Payment extends CI_Controller {
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                   
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('7'));
+                  $array_without_body_cover = array_diff($final_arr, array('7'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -441,7 +456,7 @@ class Payment extends CI_Controller {
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offerid."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
                    $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('8'));
+                  $array_without_body_cover = array_diff($final_arr, array('8'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -461,7 +476,7 @@ class Payment extends CI_Controller {
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offerid."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('3'));
+                  $array_without_body_cover = array_diff($final_arr, array('3'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
@@ -480,7 +495,7 @@ class Payment extends CI_Controller {
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offerid."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
                   $update_offer = $this->db->query("update offer_item set allocated_offer_qty='".$total_allocated_qty."' where offer_item_id=$offerid");
                 }else{
-                  $array_without_body_cover = array_diff($myarray, array('4'));
+                  $array_without_body_cover = array_diff($final_arr, array('4'));
                   $offer_id_value2 = array_rand( $array_without_body_cover, $num );
                   $offer_id2 = $array_without_body_cover[$offer_id_value2];
                   $update = $this->db->query("update booking set payment_status='Paid', booking_date='".$date."', transaction_id='".$razorpay_payment_id."', offer_item_id='".$offer_id2."', booking_id='".'100'.rand(1,999)."' where id=$token_id");
