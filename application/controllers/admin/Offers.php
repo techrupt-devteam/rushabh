@@ -32,6 +32,7 @@ class Offers extends CI_Controller {
 	
 	public function add_offers()
 	{
+		
 		$data['message']="";
 		$data['page_title']=" Add Offers";
 		if(!$this->session->userdata('apple_adminusr')){	
