@@ -16,7 +16,7 @@ class Manage_booking extends CI_Controller {
 		  redirect("admin/secure");
 		}
 		//$data['booking_list'] = $this->common->getAllRow('booking',' ORDER BY id DESC');
-		$query = $this->db->select('booking.*,offer_item.*,booking.status as delivery_status')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id','left')->get();
+		$query = $this->db->select('booking.*,offer_item.*,booking.status as delivery_status')->from('booking')->join('offer_item', 'booking.offer_item_id = offer_item.offer_item_id','left')->order_by('id','DESC')->get();
 		$data['booking_list'] = $query->result_array();
 		
 		$data['offer_item_list'] = $this->common->getAllRow('offer_item',' ORDER BY offer_item_id ASC');

@@ -60,7 +60,8 @@ class Activa_6g extends CI_Controller {
 		    $data['canonical'] = 'activa-6g'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Activa 6g price in Nashik |  Rushabh Honda';
 		$data['pgKeywords'] = 'Activa 6g price in nashik | honda activa 6g, Rushabh Honda Nashik';
 		$data['pgDesc'] = 'Looking for Honda Activa 6g in Nashik? Here is Rushabh Honda with Hondas best two-wheeler model inventory. Browse today!';

@@ -14,8 +14,6 @@ class Livo extends CI_Controller {
 	    if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -64,7 +62,8 @@ class Livo extends CI_Controller {
 		$data['canonical'] = 'livo'; 
 		
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Livo Price in Nashik | Honda Livo |Rushabh Honda';
 		$data['pgKeywords'] = 'Honda Livo Bike, Livo, Price';
 		$data['pgDesc'] = 'Honda Livo Specifications, Price and more available at Rushabh Honda. Other Honda Two-wheeler models available. View more!';

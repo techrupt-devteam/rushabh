@@ -62,7 +62,8 @@ class Our_workshop_locations extends CI_Controller {
 		    $data['canonical'] = 'our-workshop-locations'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Workshop Locations | Rushabh Honda | Two Wheeler In Nashik';
 		$data['pgKeywords'] = 'new X Blade bike, First-in-class Robo-Face LED headlamps Bike, Nashik';
 		$data['pgDesc'] = 'Rushabh Honda is Honda Two wheeler Dealer with its workshop locations at Mumbai Naka, Uttam Nagar, Mhasrul, Ambad and Indira Nagar. Book now!';

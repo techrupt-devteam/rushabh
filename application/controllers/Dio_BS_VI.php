@@ -63,7 +63,8 @@ class Dio_BS_VI extends CI_Controller {
 		
 		
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda DIO BS-VI price in Nashik | Rushabh Honda ';
 		$data['pgKeywords'] = 'dio price in nashik | honda dio | DIO BS-VI';
 		$data['pgDesc'] = 'Rushabh Honda offers Honda Dio at best price in Nashik. Browse inventory with different Honda two-wheeler models and get your favorite model today!';

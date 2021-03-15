@@ -12,7 +12,8 @@ class Send_whatsapp_message extends CI_Controller {
 
 	public function index()
 	{
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Rushabh Honda | Two Wheeler Honda Showroom In Nashik';
 		$data['pgKeywords'] = 'new X Blade bike, First-in-class Robo-Face LED headlamps Bike, Nashik';
 		$data['pgDesc'] = 'XBlade bike is available in Nashik';

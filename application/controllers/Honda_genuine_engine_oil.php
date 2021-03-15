@@ -16,8 +16,6 @@ class Honda_genuine_engine_oil extends CI_Controller {
 		if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -63,7 +61,8 @@ class Honda_genuine_engine_oil extends CI_Controller {
 		}else{
 		    $data['canonical'] = 'honda-genuine-engine-oil'; 
 		}
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Genuine Engine Oil | Rushabh Honda | Nashik';
 		$data['pgKeywords'] = 'Honda Genuine Engine Oil, Rushabh Honda';
 		$data['pgDesc'] = 'Available Honda Genuine Oil at Rushabh Honda. Checkout newest Honda Two-wheeler easily online and book your favorite model today. Click for more info!';

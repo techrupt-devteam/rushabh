@@ -115,7 +115,8 @@ class Feedback extends CI_Controller {
         
         $data['canonical'] = 'feedback'; 
         
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Feedback | Rushabh Honda | Two Wheeler In Nashik';
 		$data['pgKeywords'] = 'Product Enquiry of Rushabh Honda Nashik';
 		$data['pgDesc'] = 'Rushabh Honda awaits for your valuable response. We strive for best services as a two-wheeler dealer in Nashik for years. We look forward for your feedback.';

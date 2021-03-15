@@ -80,7 +80,8 @@ class Product_enquiry extends CI_Controller {
 			redirect('thank_you');
 		}
 
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Product Enquiry | Rushabh Honda';
 		$data['pgKeywords'] = 'Product Enquiry of Rushabh Honda Nashik';
 		$data['pgDesc'] = 'Product Enquiry of Rushabh Honda Nashik';

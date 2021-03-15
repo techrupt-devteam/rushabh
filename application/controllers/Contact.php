@@ -19,8 +19,6 @@ class Contact extends CI_Controller {
 			$data_in['mobile']='8149678010';
 			$data_in['address']='nsk';
 			$data_in['message']='ts';
-
-				
 				$config = [];
 					/*$config = array (
 					'protocol' => 'mail',
@@ -73,7 +71,8 @@ class Contact extends CI_Controller {
 
 
 
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['bikes'] = $this->common->getAllRow('bikes_scooters','where type="Bikes" ORDER BY id ASC');
 		$data['scooters'] = $this->common->getAllRow('bikes_scooters','where type="Scooters" ORDER BY id ASC');
 		$data['title'] = 'Contact Us | Rushabh Honda | Two Wheeler Dealers In Nashik';

@@ -61,7 +61,8 @@ class X_blade extends CI_Controller {
 		    $data['canonical'] = 'x-blade'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda X blade price in Nashik | Rushabh Honda | Two Wheeler';
 		$data['pgKeywords'] = 'X blade price in Nashik | Honda X blade';
 		$data['pgDesc'] = 'Honda X blade available in Nashik at most reasonable price only at Rushabh Honda. Checkout the newest Hobda models available. View now!';

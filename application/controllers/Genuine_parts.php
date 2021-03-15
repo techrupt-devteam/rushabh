@@ -16,8 +16,6 @@ class Genuine_parts extends CI_Controller {
 		if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -64,7 +62,8 @@ class Genuine_parts extends CI_Controller {
 		    $data['canonical'] = 'genuine-parts'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Genuine Parts In Nashik | Rushabh Honda | Two Wheeler ';
 		$data['pgKeywords'] = '';
 		$data['pgDesc'] = 'Honda genuine parts exclusively available at Rushbah Honda. Get your Honda two-wheeler serviced. Save your time by booking your vehicle’s servicing online now.';

@@ -60,6 +60,7 @@ class Offers extends CI_Controller {
 		}*/
 		$data['canonical'] = 'offers'; 
 		
+		//$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Offers | Rushabh Honda | Two Wheeler Dealers In Nashik';
 		$data['pgKeywords'] = 'Offers Avialable in Rushabh Honda Branches in Nashik';

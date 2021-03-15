@@ -54,8 +54,8 @@ class Home extends CI_Controller {
 		$data['canonical'] = current_url(); 
 		
 		$data['slider'] = $this->common->getAllRow('slider',' ORDER BY sort ASC');
-		//print_r($data['slider']); die;
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Two Wheeler Honda Showroom In Nashik | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda Showroom In Nashik | Nashik Honda Showroom';
 		$data['pgDesc'] = 'Exclusive Honda Showroom In Nashik. Rushabh Honda offers you the best Two-wheeler models at great prices! Browse the inventory today.';

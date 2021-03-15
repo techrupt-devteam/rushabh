@@ -11,7 +11,8 @@ class Cb_hornet_160r extends CI_Controller {
     
 	public function index()
 	{
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'CB Hornet 160R | Rushabh Honda';
 		$data['pgKeywords'] = 'CB Hornet 160R bike, stylish bike, Nashik';
 		$data['pgDesc'] = 'Honda CB Hornet 160R is the 160cc bike launched by Honda.';

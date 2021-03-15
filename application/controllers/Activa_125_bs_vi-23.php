@@ -12,7 +12,8 @@ class Activa_125_bs_vi extends CI_Controller {
 	public function index()
 	{
 	    $data['canonical'] = '';
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Activa 125 BS-VI | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda activa125 scooter, New Activa125, Honda Scooter, Rushabh Honda Nashik';
 		$data['pgDesc'] = 'Honda has lunched new Scooter Activa 125cc HET BS-VI engine with more good specification, Stylish colors and mileage.';

@@ -11,7 +11,8 @@ class Cbr_250 extends CI_Controller {
     
 	public function index()
 	{
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'CBR 250R | Rushabh Honda';
 		$data['pgKeywords'] = 'CBR250R sport bike, CBR150R Bike, Nashik';
 		$data['pgDesc'] = 'The Honda CBR250R sport bike is available in India with 250cc engine.';

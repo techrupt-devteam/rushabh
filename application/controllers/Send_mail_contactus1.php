@@ -13,7 +13,8 @@ class Send_mail_contactus1 extends CI_Controller {
 	public function index()
 	{
 	   
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Thank you | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda Insurance, Nashik';
 		$data['pgDesc'] = 'Thank you for contact Us';

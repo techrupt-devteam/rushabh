@@ -127,7 +127,8 @@ class Honda_shield extends CI_Controller {
 		}
 		
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Shield | Rushabh Honda | Two Wheeler In Nashik';
 		$data['pgKeywords'] = 'Honda Shield';
 		$data['pgDesc'] = 'Honda Shield available at Rushabh Honda in Nashik. Get prominent Two-wheeler models at reasonable prices. View Inventory today!';

@@ -15,8 +15,6 @@ class Grazia_125 extends CI_Controller {
 	    if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -62,8 +60,8 @@ class Grazia_125 extends CI_Controller {
 		    $data['canonical'] = 'grazia-125'; 
 		}
 		
-		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Grazia price in nashik | Rushabh Honda | Two Wheeler ';
 		$data['pgKeywords'] = '';
 		$data['pgDesc'] = 'Honda Grazia available in Nashik exclusively at Rushabh Honda at unbelievable price! View more to check out wide range of Honda two-wheeler models easily! ';

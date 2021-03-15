@@ -160,7 +160,9 @@ class Book_your_service extends CI_Controller {
 		
 		$data['canonical'] = '';
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Book Honda Two Wheeler In Nashik | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda bike dealer in Nasik, Honda bike dealers in Nasik, Honda bike dealers in Mumbai Naka,Indira Nagar, Meri Mhasrul, Uttam Nagar Cidco, Nashik. Honda bike dealers in Mumbai Naka, authorised Honda bike, Honda bike showroom Indira Nagar, Honda bike showroom in  Muambai Naka,Indira Nagar, Meri Mhasrul, Cidco Nashik, Honda Bike, Mumbai Naka, Indira Nagar, Meri Mhasrul, Uttam Nagar Cidco, Nashik, Honda bike dealer in Mumbai Naka, Indira Nagar, Meri Mhasrul, Uttam Nagar Cidco, Nashik, Honda bike dealers in Nashik';
 		$data['pgDesc'] = 'Rushabh Honda is best two wheeler Service Center in Nashik. Available with pickup and drop option. Door step service offered. Book service online easily.';

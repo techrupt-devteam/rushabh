@@ -11,7 +11,8 @@ class Activa_6g extends CI_Controller {
     
 	public function index()
 	{
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Activa 6G | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda Activa6G, two wheeler, New Activa6G, scooter, Rushabh Honda Nashik';
 		$data['pgDesc'] = 'Honda has launched new Activa 6G with latest technological innovation. It is equipped with the new eSP technology along with incredible new features like the revolutionary silent start, telescopic suspension, double lid external fuel fill,12 inch front wheel and 10%^ more mileage.';

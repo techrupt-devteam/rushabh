@@ -14,8 +14,6 @@ class Cb_unicorn extends CI_Controller {
 	    if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -61,7 +59,8 @@ class Cb_unicorn extends CI_Controller {
 		    $data['canonical'] = 'cb-unicorn'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = ' Honda CB Unicorn price in Nashik | Rushabh Honda ';
 		$data['pgKeywords'] = 'Honda CB Unicorn, Bike, CB Uncorn Price, Features of CB Unicorn.';
 		$data['pgDesc'] = 'Checkout Honda CB Unicorn price in Nashik exclusively at Rushabh Honda. Browse the inventory with best models available. Book now!';

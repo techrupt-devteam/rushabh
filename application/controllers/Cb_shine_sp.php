@@ -11,7 +11,8 @@ class Cb_shine_sp extends CI_Controller {
     
 	public function index()
 	{
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'CB Shine SP 125 | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda CB Shine, Bike';
 		$data['pgDesc'] = 'Honda has lunched new super stylish bike CB Shine SP with more powerful engine, good specification and mileage. Nashik';

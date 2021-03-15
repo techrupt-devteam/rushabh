@@ -64,7 +64,8 @@ class Download_e_brochure extends CI_Controller {
 		    $data['canonical'] = 'download-e-brochure'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Download E Brochure | Rushabh Honda | Two Wheeler In Nashik';
 		$data['pgKeywords'] = 'Download All type of Honda Bike, Scooter Brochure, Rushabh Honda, Nashik';
 		$data['pgDesc'] = 'Download E brochure and get Honda Two-wheeler insights online easily. Rushabh Honda offers you varied range of two-wheeler with allied services. Browse now!';

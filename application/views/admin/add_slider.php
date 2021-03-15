@@ -60,12 +60,10 @@
                   <a href="<?php echo base_url(); ?>admin/secure/home" type="button" class="btn lg btn-danger btn_cancel">Cancel</a>
               </div>
             </div>
+            
         </div>
       </div>
     </div>
-
-     
-      
     </div>
     </div>
     </div>

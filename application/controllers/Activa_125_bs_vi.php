@@ -62,7 +62,8 @@ class Activa_125_bs_vi extends CI_Controller {
 		}
 		
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda Activa 125 price in Nashik | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda activa125 scooter, New Activa125, Honda Scooter, Rushabh Honda Nashik';
 		$data['pgDesc'] = 'Available Honda Activa 125 at great prices only at Rushabh Honda. Book from a wide range of Honda Two-wheeler at most reasonable price in Nashik.';

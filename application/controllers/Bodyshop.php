@@ -69,7 +69,8 @@ class Bodyshop extends CI_Controller {
 
         $data['canonical'] = '';
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Bodyshop in Nashik | Honda Bike Loan - Rushabh Honda';
 		$data['pgKeywords'] = 'Honda Bike Finance in Nashik. We offer the Cheapest Honda Bike Finance services. Get Honda Car Loan in Bike at Cheapest Interest Rate from Rushabh Honda.';
 		$data['pgDesc'] = 'Honda Genuine Engine Oil';

@@ -139,7 +139,8 @@ class Online_booking extends CI_Controller {
 		    $data['canonical'] = 'online-booking'; 
 		}*/
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		/*$data['product'] = $this->db->query("SELECT car, ANY_VALUE(color) as color, MAX(on_road_price) as on_road_price FROM product GROUP BY car")->result();*/
 
 		$data['product'] = $this->db->query("SELECT * FROM product GROUP BY car")->result();

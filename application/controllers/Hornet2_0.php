@@ -14,8 +14,6 @@ class Hornet2_0 extends CI_Controller {
 		if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -60,7 +58,8 @@ class Hornet2_0 extends CI_Controller {
 		    $data['canonical'] = 'hornet2-0'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Hornet bike price in nashik | Rushabh Honda';
 		$data['pgKeywords'] = 'Hornet bike price in nashik | Rushabh Honda';
 		$data['pgDesc'] = 'Available Honda Hornet 2.0 at reasonable price exclusively at Rushabh Honda, Nashik. Check features, images, price and more. Click for more info!';

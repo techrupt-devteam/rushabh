@@ -12,7 +12,8 @@ class Grazia_125 extends CI_Controller {
 
 	public function index()
 	{
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Rushabh Honda | Two Wheeler Honda Showroom In Nashik';
 		$data['pgKeywords'] = '';
 		$data['pgDesc'] = '';

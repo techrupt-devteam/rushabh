@@ -130,7 +130,8 @@ class Finance extends CI_Controller {
 
         $data['canonical'] = 'finance'; 
         
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Finance | Rushabh Honda | Two Wheeler In Nashik';
 		$data['pgKeywords'] = 'Honda Bike Finance in Nashik. We offer the Cheapest Honda Bike Finance services. Get Honda Car Loan in Bike at Cheapest Interest Rate from Rushabh Honda.';
 		$data['pgDesc'] = 'Rushabh Honda offers you Honda Two Wheeler Finance. Also, checkout newest Honda Two-wheeler easily online and book your favorite model today. Click for more! ';

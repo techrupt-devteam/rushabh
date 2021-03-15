@@ -12,7 +12,8 @@ class Rushabh_winner extends CI_Controller {
 	public function index()
 	{
 		$data['canonical'] = '.';
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['bikes'] = $this->common->getAllRow('bikes_scooters','where type="Bikes" ORDER BY id ASC');
 		$data['scooters'] = $this->common->getAllRow('bikes_scooters','where type="Scooters" ORDER BY id ASC');
 		$data['title'] = 'Rushabh Winner | Rushabh Honda | Two Wheeler Dealers In Nashik';

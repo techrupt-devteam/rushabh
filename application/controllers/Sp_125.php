@@ -14,8 +14,6 @@ class Sp_125 extends CI_Controller {
 	    if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -61,7 +59,8 @@ class Sp_125 extends CI_Controller {
 		}
 		
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Shine sp 125 price in Nashik | Honda Shine | Rushabh Honda';
 		$data['pgKeywords'] = 'Shine sp 125 price in Nashik | Honda Shine sp 125';
 		$data['pgDesc'] = 'Honda Shine sp 125 available in Nashik at low price. Checkout the most premium two-wheeler models at Rushabh Honda at best prices now.';

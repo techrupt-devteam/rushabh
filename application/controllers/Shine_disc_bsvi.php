@@ -14,8 +14,6 @@ class Shine_disc_bsvi extends CI_Controller {
 	    	if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -65,7 +63,8 @@ class Shine_disc_bsvi extends CI_Controller {
 		    $data['canonical'] = 'shine-disc-bsvi'; 
 		}
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Shine Disc Price in Nashik | Rushabh Honda | Two Wheeler ';
 		$data['pgKeywords'] = 'Honda CB Shine, Bike, Nashik';
 		$data['pgDesc'] = 'Honda Shine Disc available at best price in Nashik at Rushabh Honda. Get prominent Two-wheeler models at reasonable prices. View Inventory today!';

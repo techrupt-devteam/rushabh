@@ -15,11 +15,8 @@ class Insurance extends CI_Controller {
 		if($this->input->post('submit'))
 		{
 			$data_in['conditions']=$this->input->post('conditions');
-
 			if($data_in['conditions']=='on'){
-
 			$to_mobile = $this->input->post('phone_no');
-
 			$data_in['full_name']=$this->input->post('full_name');
 			$data_in['email']=$this->input->post('email');
 			$data_in['phone_no']=$this->input->post('phone_no');
@@ -75,8 +72,6 @@ class Insurance extends CI_Controller {
 
 					redirect('thank-you');
 			}
-
-
 			}else{
 				print '<script>alert("Record added successfully");
 					window.location.href = "'.base_url().'insurance";
@@ -89,8 +84,6 @@ class Insurance extends CI_Controller {
 		if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -131,7 +124,8 @@ class Insurance extends CI_Controller {
 
         $data['canonical'] = 'insurance'; 
         
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Insurance | Rushabh Honda | Two Wheeler In Nashik';
 		$data['pgKeywords'] = 'Honda Insurance, Nashik';
 		$data['pgDesc'] = 'Rushabh Honda offers you Honda Two Wheeler Insurance. Also, checkout newest Honda Two-wheeler easily online and book your favorite model today. Click for more!';

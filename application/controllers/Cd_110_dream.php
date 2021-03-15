@@ -14,8 +14,6 @@ class Cd_110_dream extends CI_Controller {
 	    if($this->input->post('subscription_submit'))
 		{
 			$data_in['email'] = $this->input->post('email');
-
-
 			$this->load->library('email');
 				$config = array (
 				'protocol' => 'mail',
@@ -61,7 +59,8 @@ class Cd_110_dream extends CI_Controller {
 		}
 		
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'Honda CD dream 110 price in Nashik | Rushabh Honda';
 		$data['pgKeywords'] = 'Honda CD110 Dream, Bike';
 		$data['pgDesc'] = 'Review Honda CD Dream 110 price in Nashik easily on Rushabh Honda. Look for best Honda models with specifications mentioned. View more!';

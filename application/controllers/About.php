@@ -65,7 +65,8 @@ class About extends CI_Controller {
 		$data['canonical'] = 'about'; 
 		
 		
-		$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		//$data['offers'] = $this->common->getAllRow('offers',' ORDER BY id DESC');
+		$data['offers'] = $this->common->getAllRow('offers','where show_on_website=1 ORDER BY id DESC');
 		$data['title'] = 'About Us | Rushabh Honda | Two Wheeler Dealers In Nashik';
 		$data['pgKeywords'] = 'Honda Showroom In Nashik | Nashik Honda Showroom';
 		$data['pgDesc'] = 'Rushabh Honda is Honda Two wheeler Dealer with its workshop locations at Mumbai Naka, Uttam Nagar, Mhasrul, Ambad and Indira Nagar. Book now!';
